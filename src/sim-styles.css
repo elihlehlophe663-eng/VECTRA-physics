@@ -1,0 +1,114 @@
+/* Simulation page specific styles */
+
+/* 3D simulation viewport — ensures the canvas always fills its container
+   and is never hidden behind other elements. */
+.simulation-viewport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  isolation: isolate; /* establish a clean stacking context */
+}
+.simulation-viewport canvas {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.sim-panel {
+  @apply rounded-xl border border-surface-border bg-space-800/50 backdrop-blur-md;
+}
+
+.sim-panel-header {
+  @apply flex items-center gap-2 border-b border-surface-border px-4 py-3;
+}
+
+.sim-panel-title {
+  @apply font-mono text-eyebrow uppercase tracking-widest-2 text-accent-cyan;
+}
+
+.sim-panel-body {
+  @apply flex flex-col gap-3 p-4;
+}
+
+/* Custom range slider */
+.sim-slider {
+  @apply h-1 w-full cursor-pointer appearance-none rounded-full bg-space-500;
+  -webkit-appearance: none;
+}
+
+.sim-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #5ec8d8;
+  border: 2px solid #04060d;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.sim-slider::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 4px rgba(94, 200, 216, 0.2);
+}
+
+.sim-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #5ec8d8;
+  border: 2px solid #04060d;
+  cursor: pointer;
+}
+
+.sim-num-input {
+  @apply w-16 rounded-md border border-surface-border bg-space-900/60 px-2 py-1 text-right font-mono text-sm text-star-white focus:border-accent-cyan/40 focus:outline-none;
+}
+
+.sim-num-input::-webkit-inner-spin-button,
+.sim-num-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.sim-toggle-btn {
+  @apply flex items-center justify-between gap-2 rounded-lg border border-surface-border bg-space-700/30 px-3 py-2 font-mono text-xs text-star-white/50 transition-all duration-200 hover:border-surface-border-hover;
+}
+
+.sim-toggle-btn.active {
+  @apply border-accent-cyan/40 bg-accent-cyan/10 text-accent-cyan;
+}
+
+.sim-preset-btn {
+  @apply rounded-lg border border-surface-border bg-space-700/30 px-3 py-2.5 text-left font-display text-xs font-medium text-star-white/55 transition-all duration-200 hover:border-surface-border-hover hover:bg-surface-hover hover:text-star-white;
+}
+
+.sim-preset-btn.active {
+  @apply border-accent-cyan/40 bg-accent-cyan/10 text-accent-cyan;
+}
+
+.sim-speed-btn {
+  @apply rounded-md px-2.5 py-1.5 font-mono text-xs text-star-white/40 transition-all duration-200 hover:text-star-white;
+}
+
+.sim-speed-btn.active {
+  @apply bg-accent-cyan/15 text-accent-cyan;
+}
+
+.sim-data-row {
+  @apply flex items-center justify-between gap-2 py-1.5;
+}
+
+.sim-data-label {
+  @apply font-mono text-xs text-star-white/40;
+}
+
+.sim-data-value {
+  @apply font-mono text-sm text-star-white;
+}
+
+.sim-data-unit {
+  @apply font-mono text-xs text-star-white/30;
+}
