@@ -24,8 +24,8 @@ const StellarLifecyclePage = lazy(() =>
 
 function App() {
   return (
-    <<BrowserRouter basename={import.meta.env.BASE_URL}
-      <Routes>
+   <BrowserRouter basename={import.meta.env.BASE_URL}>
+     <Routes>
         <Route path="/" element={<HomePage />} />
         <Route
           path="/simulations/orbital-mechanics"
